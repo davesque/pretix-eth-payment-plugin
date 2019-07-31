@@ -1,0 +1,8 @@
+pretix==2.8.2
+gunicorn==19.9.0
+whitenoise==4.1.3
+dj-database-url==0.5.0
+
+# This is required by eth-utils and takes a while to build so we do it early
+# to save the trouble of installing it whenever our plugin code changes
+cytoolz<1.0.0,>=0.8.2

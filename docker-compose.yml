@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    env_file: .env
+
+    ports:
+      - '$PORT:$PORT'
+    volumes:
+      - '.:/code'
+      - './data:/data'
+    depends_on:
+      - db
+      - cache
+
+    stdin_open: true
+    tty: true
+
+    command: ['/usr/local/bin/pretix', 'webworker', '-c', '/code/docker_files/debug.ini']
+
+  db:
+    image: postgres
+
+  cache:
+    image: redis

@@ -1,0 +1,13 @@
+.*
+*/.*
+*.pyc
+*/*.pyc
+__pycache__
+*/__pycache__
+*.egg-info
+
+Dockerfile
+
+docker-compose.yml
+
+runtime.txt
